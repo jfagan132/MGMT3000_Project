@@ -192,3 +192,83 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* tasks */
+
+.tasks {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+    font-size: 12pt;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    font-size: 14pt;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+    font-size: 9pt;
+  }
+  .priority {
+    float: right;
+    font-weight: bold;
+    font-size: 11pt;
+  }
+  .completed {
+    float: right;
+    font-weight: bold;
+    font-size: 16pt;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+.low-wrapper {
+  background-color: #99FF99;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #006600;
+}
+
+.medium-wrapper {
+  background-color: #FFCC80;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #FF6600;
+}
+
+.high-wrapper {
+  background-color: #FF9999;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #FF0000;
+}
+
+.complete-wrapper {
+  background-color: #BFBFBF;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #000000;
+}

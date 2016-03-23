@@ -22,3 +22,25 @@ User.create!(name:  "Jacob Fagan",
                password:              password,
                password_confirmation: password)
 end
+
+users = User.order(:created_at).take(6)
+10.times do |n|
+  content = "Task #{n+1}"
+  priority = "Low"
+  is_complete = false
+  users.each { |user| user.tasks.create!(content: content, priority: priority, is_complete: is_complete) }
+end
+
+10.times do |n|
+  content = "Task #{n+11}"
+  priority = "Medium"
+  is_complete = false
+  users.each { |user| user.tasks.create!(content: content, priority: priority, is_complete: is_complete) }
+end
+
+10.times do |n|
+  content = "Task #{n+21}"
+  priority = "High"
+  is_complete = false
+  users.each { |user| user.tasks.create!(content: content, priority: priority, is_complete: is_complete) }
+end

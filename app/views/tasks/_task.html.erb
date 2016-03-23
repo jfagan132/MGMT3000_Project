@@ -1,0 +1,49 @@
+<li id="task-<%= task.id %>">
+    <% if task.is_complete != true %>
+        <% if task.priority.casecmp("low").zero? %>
+            <div class="low-wrapper">
+                <span class="user"><%= link_to task.user.name, task.user %> posted the following task:</span>
+                <span class="content"><%= task.content %></span>
+                <span class="priority">Priority: <%= task.priority %></span>
+                <span class="timestamp">
+                    Posted <%= time_ago_in_words(task.created_at) %> ago.
+                </span>
+                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), class: "btn btn-primary" %></div>
+            </div>
+        <% elsif task.priority.casecmp("medium").zero? %>
+            <div class="medium-wrapper">
+                <span class="user"><%= link_to task.user.name, task.user %> posted the following task:</span>
+                <span class="content"><%= task.content %></span>
+                <span class="priority">Priority: <%= task.priority %></span>
+                <span class="timestamp">
+                    Posted <%= time_ago_in_words(task.created_at) %> ago.
+                </span>
+                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), class: "btn btn-primary" %></div>
+            </div>
+        <% elsif task.priority.casecmp("high").zero? %>
+            <div class="high-wrapper">
+                <span class="user"><%= link_to task.user.name, task.user %> posted the following task:</span>
+                <span class="content"><%= task.content %></span>
+                <span class="priority">Priority: <%= task.priority %></span>
+                <span class="timestamp">
+                    Posted <%= time_ago_in_words(task.created_at) %> ago.
+                </span>
+                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), class: "btn btn-primary" %></div>
+            </div>
+        <% end %>
+    <% else %>
+        <div class="complete-wrapper">
+            <span class="user"><%= link_to task.user.name, task.user %> posted the following task:</span>
+            <span class="content"><%= task.content %></span>
+            <span class="completed">Complete!</span>
+            <span class="timestamp">
+                Posted <%= time_ago_in_words(task.created_at) %> ago.
+            </span>
+            <span class="timestamp">
+                 Completed <%= time_ago_in_words(task.updated_at) %> ago.
+            </span>
+            <%= link_to "Delete this post", task, method: :delete,
+                                       data: { confirm: "Are you sure?" } %>
+        </div>
+    <% end %>
+</li>
