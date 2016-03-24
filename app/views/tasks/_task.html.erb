@@ -8,7 +8,9 @@
                 <span class="timestamp">
                     Posted <%= time_ago_in_words(task.created_at) %> ago.
                 </span>
-                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), class: "btn btn-primary" %></div>
+                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></div>
+                <%= link_to "Delete this post", task, method: :delete,
+                                       data: { confirm: "Are you sure?" } %>
             </div>
         <% elsif task.priority.casecmp("medium").zero? %>
             <div class="medium-wrapper">
@@ -18,7 +20,9 @@
                 <span class="timestamp">
                     Posted <%= time_ago_in_words(task.created_at) %> ago.
                 </span>
-                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), class: "btn btn-primary" %></div>
+                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></div>
+                <%= link_to "Delete this post", task, method: :delete,
+                                       data: { confirm: "Are you sure?" } %>
             </div>
         <% elsif task.priority.casecmp("high").zero? %>
             <div class="high-wrapper">
@@ -28,7 +32,9 @@
                 <span class="timestamp">
                     Posted <%= time_ago_in_words(task.created_at) %> ago.
                 </span>
-                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), class: "btn btn-primary" %></div>
+                <div align="center"><%= link_to "Mark Complete", complete_task_path(task), data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></div>
+                <%= link_to "Delete this post", task, method: :delete,
+                                       data: { confirm: "Are you sure?" } %>
             </div>
         <% end %>
     <% else %>
